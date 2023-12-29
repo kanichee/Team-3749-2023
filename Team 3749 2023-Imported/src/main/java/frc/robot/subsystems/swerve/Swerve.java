@@ -6,7 +6,6 @@ package frc.robot.subsystems.swerve;
 
 import java.sql.Driver;
 
-import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -64,7 +63,7 @@ public class Swerve extends SubsystemBase {
                 moduleData[i] = new ModuleData();
             }
         } else if (!Constants.isSim) {
-            gyro = new NavX2Gyro();
+            gyro = new GyroIO() {};
             gyroData = new GyroData();
 
             for (int i = 0; i < 4; i++) {
